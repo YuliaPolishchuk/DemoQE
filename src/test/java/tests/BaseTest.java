@@ -14,21 +14,21 @@ public class BaseTest {
     WebDriver driver;
     Buttons buttons;
     CheckBox checkBox;
-//    RadioButton radioButton;
+    RadioButton radioButton;
     TextBox textBox;
-//    WebTables webTables;
+    WebTables webTables;
 
     @BeforeMethod
     public void setup() {
         ChromeOptions options = new ChromeOptions();
-        options.setCapability("pageLoadStrategy", "eager");
+        System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver.exe");
         driver = new ChromeDriver(options);
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
         buttons = new Buttons(driver);
         checkBox = new CheckBox(driver);
-//        radioButton = new RadioButton(driver);
+        radioButton = new RadioButton(driver);
         textBox = new TextBox(driver);
-//        webTables = new WebTables(driver);
+        webTables = new WebTables(driver);
     }
 
     @AfterMethod(alwaysRun = true)

@@ -7,15 +7,15 @@ public class TextBox {
 
     WebDriver driver;
 
-    By fullNameField = By.xpath("[@id=\"userName\"]");
-    By emailField = By.xpath("[@id=\"userEmail\"]");
-    By currentAddressField = By.xpath("[@id=\"currentAddress\"]");
-    By permanentAddressField = By.xpath("[@id=\"permanentAddress\"]");
-    By submitButton = By.xpath("[@id=\"submit\"]");
-    By outputName  = By.xpath("[@id=\"name\"]");
-    By outputEmail = By.xpath("[@id=\"email");
-    By outputCurrentAddress = By.xpath("[@id=\"currentAddress\"]");
-    By outputPermanentAddress = By.xpath("[@id=\"permanentAddress\"]");
+    By fullNameField = By.xpath("//*[@id='userName']");
+    By emailField = By.xpath("//*[@id='userEmail']");
+    By currentAddressField = By.xpath("//*[@id='currentAddress']");
+    By permanentAddressField = By.xpath("//*[@id='permanentAddress']");
+    By submitButton = By.xpath("//*[@id='submit']");
+    By outputName  = By.xpath("//*[@id='name']");
+    By outputEmail = By.xpath("//*[@id='email']");
+    By outputCurrentAddress = By.xpath("//*[@id='currentAddress']");
+    By outputPermanentAddress = By.xpath("//*[@id='permanentAddress']");
 
     public TextBox(WebDriver driver) {
         this.driver = driver;
@@ -30,10 +30,9 @@ public class TextBox {
         driver.findElement(emailField).sendKeys(email);
         driver.findElement(currentAddressField).sendKeys(currentAddress);
         driver.findElement(permanentAddressField).sendKeys(permanentAddress);
-        driver.findElement(submitButton).click();
     }
 
-    public void clicksubmitButton() {
+    public void clickSubmitButton() {
         driver.findElement(submitButton).click();
     }
 
